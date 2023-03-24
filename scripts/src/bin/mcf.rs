@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 use sha256::digest_bytes;
 use std::error::Error;
 use tera::{Context, Tera};
+
 #[macro_use]
 extern crate lazy_static;
 
