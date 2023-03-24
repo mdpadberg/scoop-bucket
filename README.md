@@ -1,8 +1,9 @@
-## Scripts
-Scripts to generate json files for scoop.
+# Bucket for scoop
+This repo contains json files for [scoop.sh]("https://scoop.sh/").
 
-For example, to generate a json file for the mutli-cf project is to run:
+## To generate the json files
+For example, to generate a json file for my multi-cf project:
 ```cargo run --bin mcf```
 
-For example, to build a binary that creates a json file for the mutli-cf project is to run:
-```cargo build --bin mcf --release```
+## Location
+You can find the json files for scoop in the [bucket folder]("https://github.com/mdpadberg/scoop-bucket/tree/main/bucket")
