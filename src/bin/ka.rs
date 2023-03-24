@@ -42,7 +42,7 @@ struct Asset {
 pub fn main() -> Result<(), Box<dyn Error>> {
     let client = reqwest::blocking::Client::new();
     let response = client
-        .get("https://api.github.com/repos/mdpadberg/multi-cf/releases/latest")
+        .get("https://api.github.com/repos/mdpadberg/keep-awake/releases/latest")
         .header(USER_AGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36")
         .send()?
         .json::<GithubApi>()?;
