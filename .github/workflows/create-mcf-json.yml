@@ -14,8 +14,8 @@ jobs:
       run: chmod +x binaries/mcf && ./binaries/mcf > bucket/mcf.json
     - name: Commit mcf json for scoop
       run: |
-        git config --global user.name 'Github create-formula action'
-        git config --global user.email '43384430+mdpadberg@users.noreply.github.com'
+        git config --global user.name 'Github create-mcf-json action'
+        git config --global user.email 'mdpadberg@protonmail.com'
         git add bucket/mcf.json
         git commit -m "New mcf json for scoop"
         git push 
