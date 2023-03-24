@@ -3,7 +3,7 @@ name: build-mcf-binary-that-creates-json-for-scoop
 on:
   push:
     paths:
-      - 'scripts/src/bin/mcf.rs'
+      - 'src/bin/mcf.rs'
 
 jobs:
   create_binaries:
@@ -21,11 +21,10 @@ jobs:
         toolchain: stable
         target: x86_64-unknown-linux-gnu
     - name: Build
-      working-directory: scripts
       run: cargo build --bin mcf --release
     - name: Copy binary to binaries folder
       shell: bash
-      run: cp scripts/target/release/mcf binaries 
+      run: cp target/release/mcf binaries 
     - name: Commit files
       run: |
         git config --global user.name 'mdpadberg'
