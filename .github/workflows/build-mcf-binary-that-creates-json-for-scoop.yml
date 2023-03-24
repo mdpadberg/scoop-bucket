@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout project
       uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Install Rust with cargo
       uses: actions-rs/toolchain@v1
       with:
@@ -23,10 +26,14 @@ jobs:
     - name: Copy binary to binaries folder
       shell: bash
       run: cp scripts/target/release/mcf binaries 
-    - name: Commit binary that creates bucket json file for scoop
+    - name: Commit files
       run: |
-        git config --global user.name 'Github main action'
-        git config --global user.email '43384430+mdpadberg@users.noreply.github.com'
+        git config --global user.name 'mdpadberg'
+        git config --global user.email 'mdpadberg@protonmail.com'
         git add binaries/mcf
         git commit -m "New binary that creates bucket json file for scoop"
-        git push 
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PAT_TOKEN }}
+        branch: ${{ github.ref }}
