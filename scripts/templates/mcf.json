@@ -17,7 +17,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mdpadberg/multi-cf/releases/download/$version/mcf-$version-x86_64-pc-windows-gnu.zip",
+                "url": "https://github.com/mdpadberg/multi-cf/releases/download/$version/mcf-$version-x86_64-pc-windows-gnu.zip"
             }
         }
     }
