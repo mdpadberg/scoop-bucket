@@ -1,4 +1,4 @@
-name: build-mcf-binary-that-creates-json
+name: build-mcf-binary-that-creates-json-for-scoop
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   create_binaries:
-    name: create-mcf-formula binary
+    name: build-mcf-binary-that-creates-json-for-scoop
     runs-on: ubuntu-latest
     steps:
     - name: Checkout project
